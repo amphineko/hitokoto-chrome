@@ -1,0 +1,20 @@
+{
+	"name": "Hitokoto Popup",
+	"version": "1.0",
+	"manifest_version": 2,
+	
+	"description": "载入页面的时候显示ヒトコト",
+	
+	"homepage_url": "http://acgch.me/",
+	"icons": {
+		"48": "icon.png"
+	},
+	
+	"content_scripts": [
+		{
+			"matches": [ "http://*/*", "https://*/*" ],
+			"css": ["popup.css"],
+			"js": ["jquery-2.1.1.js", "hitokoto.js"]
+		}
+	]
+}
