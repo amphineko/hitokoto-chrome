@@ -14,6 +14,12 @@ $.ajax('https://api.hitokoto.us:214/rand').done(function(data, textStatus, jqXHR
 	$('body').append('<div id="hitokoto-popup" onclick="document.getElementById(\'hitokoto-popup\').remove()"><a href="http://hitokoto.us/view/' + data.id + '" target="_blank">' + data.hitokoto + '</a></div>');
 });
 
-setTimeout(function () {
-	$('#hitokoto-popup').remove();
-}, 4000);
+document.onreadystatechange = function () {
+	if (document.readyState == 'complete') {
+		setTimeout(function () {
+			$('#hitokoto-popup').remove();
+		}, 4000);
+	}
+};
+
+document.onreadystatechange();
